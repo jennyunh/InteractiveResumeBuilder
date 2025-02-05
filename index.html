@@ -1032,8 +1032,9 @@
     }
 
     /* =============================================================================
-   PDF Export (leggoo jankkk!)
+   PDF Export (LEGGOO MORE JAANKK!)
    ========================================================================== */
+    // Use browser for pdf export. Optimized for Chrome (looks bad on Safari but why are u even using Safari *ew*)
     const PDFExport = {
         async exportToPDF(dropZone, settings) {
             const heightCheck = await uiUtils.checkContentHeight(dropZone);
@@ -1065,7 +1066,7 @@
             min-height: auto;
         `;
 
-            // Apply styles to sections
+            // Apply styles to specific sections
             clonedDropZone.querySelectorAll(".resume-section").forEach(section => {
                 styleUtils.applyFontSizes(section);
                 styleUtils.applySectionStyles(section, settings);
