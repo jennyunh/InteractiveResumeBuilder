@@ -354,7 +354,7 @@
 <div class="app">
     <header class="header">
         <h1>Interactive Resume Builder</h1>
-        <p>Drag and drop components to create your perfect resume (A4 size). <br> Created for the <a style="font-weight: 600; color: orange;" target="_blank" href="https://github.com/Metroxe/one-html-page-challenge">1 HTML Page Challenge</a> </p>
+        <p>Drag and drop components to create your perfect resume. <br> Print your resume directly, or export as a PDF (A4 size is recommended, optimized for the Chrome browser). <br> Created for the <a style="font-weight: 600; color: orange;" target="_blank" href="https://github.com/Metroxe/one-html-page-challenge">1 HTML Page Challenge</a> </p>
     </header>
 
     <main class="workspace">
@@ -1127,9 +1127,11 @@
                             --space-lg: 2rem;
                             --space-xl: 2.5rem;
                         }
+
                         body {
                             margin: 0;
-                            width: 210mm;
+                            width: 210mm; /* A4 width */
+                            min-height: 297mm; /* A4 height */
                             -webkit-print-color-adjust: exact;
                             print-color-adjust: exact;
                             background: white;
@@ -1212,6 +1214,7 @@
                         }
 
                         #resumeDropZone {
+                        transform: scale(0.96);
                             max-width: 210mm !important;
                             overflow: hidden;
                         }
@@ -1309,7 +1312,7 @@
         // Export button
         const exportBtn = document.createElement("button");
         exportBtn.className = "btn";
-        exportBtn.textContent = "Export PDF";
+        exportBtn.textContent = "Print / Export PDF";
         document.querySelector(".actions").appendChild(exportBtn);
         exportBtn.addEventListener("click", exportToPDF);
 
